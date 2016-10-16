@@ -44,5 +44,5 @@ Egy SCRUM-szerű projektmenedzser aplikáció feladatok szétosztására.
 
 ## Fogalomtár ##
 
-Feladat - Egy az adminisztrátor által meghatározott tevékenység annak leírásával és várt sprintbe való besorolásával
+Feladat - Egy az adminisztrátor által meghatározott tevékenység annak leírásával és sprintbe való besorolásával
 Sprint - Időintervallum feladatok határidejének meghatározására
