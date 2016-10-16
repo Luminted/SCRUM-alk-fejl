@@ -38,8 +38,9 @@ Egy SCRUM-szerű projektmenedzser aplikáció feladatok szétosztására.
 * Biztonságos
 * Ergonómikus
 
-## Használatiesetek ##
+## Használati esetek ##
 
+![alt text](https://github.com/Luminted/SCRUM-alk-fejl/blob/master/ScrumUseCase.png "Használati esetek")
 
 
 ## Fogalomtár ##
