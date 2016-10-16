@@ -40,7 +40,7 @@ Egy SCRUM-szerű projektmenedzser aplikáció feladatok szétosztására.
 
 ## Használati esetek ##
 
-![alt text](https://github.com/Luminted/SCRUM-alk-fejl/blob/master/ScrumUseCase.png "Használati esetek")
+![alt text](https://github.com/Luminted/SCRUM-alk-fejl/tree/master/Domunent%C3%A1ci%C3%B3 "Használati esetek")
 
 
 ## Fogalomtár ##
