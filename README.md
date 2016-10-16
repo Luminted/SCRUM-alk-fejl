@@ -8,31 +8,29 @@ Egy SCRUM-szerű projektmenedzser aplikáció feladatok szétosztására.
 ### Funkcionális követelmények ###
 #### Vendégként ####
 
-* Kiosztott feladatok megtekintése
 * Regisztráció
 
 #### Regisztrált felhasználóként ####
 
 * Bejelentkezés
 * Profiladatok szerkesztése
-* Kiosztott feladatok megtekintése
+* Feladatok megtekintése
 * Saját feladatok megtekintéseé és menedzselése
 * Feladatok vállalása
+* Szűrés feladatokra
 
 #### Adminként ####
 
 * Bejelentkezés
 * Profiladatok szerkesztése
-* Kiosztott feladatok megtekintése
+* Feladatok megtekintése
 * Saját feladatok megtekintése és menedzselése
 * Feladatok vállalása
-* Felhasználók feladatainak szerkesztése
-* Felhasználói privilégiumok meghatározása
-* Felhasználók privilégiumának kiosztása (A felhasználók csak a saját részlegükhöz tartozó feladatokat vállalhatják)
-
-#### Általános ####
-
-*Szűrés felhasználókra és feladatokra
+* Feladatok kiosztása
+* Felhasználói adatok szerkesztése
+* Felhasználói csoportok meghatározása (privilégiumok)
+* Felhasználók csoportok kiosztása
+* Szűrés feladatokra
 
 ### Nem funkcionális követelmények ###
 
@@ -43,3 +41,8 @@ Egy SCRUM-szerű projektmenedzser aplikáció feladatok szétosztására.
 ## Használatiesetek ##
 
 
+
+## Fogalomtár ##
+
+Feladat - Egy az adminisztrátor által meghatározott tevékenység annak leírásával és várt sprintbe való besorolásával
+Sprint - Időintervallum feladatok határidejének meghatározására
