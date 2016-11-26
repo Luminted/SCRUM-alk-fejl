@@ -49,7 +49,7 @@ const aceProviders = [
   'adonis-ace/providers/CommandProvider',
   'adonis-commands/providers/GeneratorsProvider',
   'adonis-commands/providers/HelperCommandsProvider',
-  'adonis-commands/providers/ReplProvider'
+  'adonis-commands/providers/ReplProvider',
 ]
 
 /*

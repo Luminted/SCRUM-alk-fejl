@@ -30,7 +30,7 @@ module.exports = {
   sqlite: {
     client: 'sqlite3',
     connection: {
-      filename: Helpers.databasePath('tasks.sqlite')
+      filename: Helpers.databasePath('scrum.sqlite')
     },
     useNullAsDefault: true,
     debug: true

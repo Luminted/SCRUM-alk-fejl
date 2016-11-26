@@ -1,0 +1,22 @@
+{
+  "name": "scrum",
+  "version": "1.0.0",
+  "description": "a scrum app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luminted/SCRUM-alk-fejl.git"
+  },
+  "keywords": [
+    "scrum"
+  ],
+  "author": "Levente Rozsenich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luminted/SCRUM-alk-fejl/issues"
+  },
+  "homepage": "https://github.com/Luminted/SCRUM-alk-fejl#readme"
+}

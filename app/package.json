@@ -2,19 +2,10 @@
   "name": "adonis-app",
   "version": "3.1.0",
   "main": "server.js",
-  "watch": {
-    "dev": {
-      "patterns": [
-        "resources"
-      ],
-      "extensions": "njk"
-    }
-  },
   "scripts": {
-    "dev": "nodemon --watch resources --watch app --watch bootstrap --watch config --watch .env -x \"node \" server.js",
+    "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "start": "node server.js",
-    "lint": "standard",
-    "watch": "npm-watch"
+    "lint": "standard"
   },
   "author": "",
   "license": "MIT",
@@ -29,6 +20,8 @@
     "adonis-lucid": "^3.0.10",
     "adonis-middleware": "^1.0.8",
     "adonis-validation-provider": "^3.0.4",
+    "express-admin": "^1.2.8",
+    "sqlite3": "^3.1.8",
     "standard": "^8.4.0",
     "youch": "^1.0.1"
   },
@@ -42,11 +35,7 @@
     "App": "./app"
   },
   "devDependencies": {
-    "express-admin": "^1.2.8",
     "nodemon": "^1.11.0",
-    "npm-watch": "^0.1.6",
-    "sqlite3": "^3.1.8",
-    "standard": "^8.5.0",
-    "watch": "^1.0.1"
+    "standard": "^8.5.0"
   }
 }
