@@ -17,6 +17,7 @@ Egy SCRUM-szerű projektmenedzser aplikáció feladatok szétosztására.
 * Feladatok megtekintése
 * Saját feladatok megtekintéseé és menedzselése
 * Feladatok vállalása
+
 #### Adminként
 
 * Bejelentkezés
