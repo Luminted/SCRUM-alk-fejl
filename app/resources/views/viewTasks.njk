@@ -1,0 +1,66 @@
+{% extends 'master' %} {% block content %}
+<h1>All Tasks waiting to be completed</h1>
+<div class="container">
+    <div class="row">
+        {% for task in undertakenTasks %}
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{task.title}}</h3>
+                </div>
+                <div class="panel-body">
+                    <p>{{task.description}}</p>
+                    <p><i> {{task.category}}</i></p>
+                </div>
+                <div class="panel-footer">
+                    <div class="form-group">
+                        <button disabled>Taken</button>
+                    </div> {% if currentUser.username == 'ScrumMaster69' %}
+                    <div class="form-group">
+                        <form action="/tasks/delete" method="POST">
+                            {{ csrfField }}
+                            <input type="hidden" name="task_id" value={{task.id}}>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %} {% for task in notUndertakenTasks %}
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{task.title}}</h3>
+                </div>
+                <div class="panel-body">
+                    <p>{{task.description}}</p>
+                    <p><i> {{task.category}}</i></p>
+                </div>
+                <div class="panel-footer">
+                    <div class="form-group">
+                        <form action="/tasks/take" method="POST">
+                            {{ csrfField }}
+                            <input type="hidden" name="task_id" value={{task.id}}>
+                            <button type="submit" class="btn btn-success">Take</button>
+                        </form>
+                    </div>
+                    {% if currentUser.username == 'ScrumMaster69' %}
+                    <div class="form-group">
+                        <form action="/tasks/delete" method="POST">
+                            {{ csrfField }}
+                            <input type="hidden" name="task_id" value={{task.id}}>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

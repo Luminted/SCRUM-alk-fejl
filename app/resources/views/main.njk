@@ -1,0 +1,17 @@
+{% extends 'master' %}
+
+{% block content %}
+
+{% if currentUser %}
+<div class="jumbotron">
+  <h1>Welcome to SCRUMify {{currentUser.username}}</h1>
+</div>
+{% else %}
+<div class="jumbotron">
+  <h1>Welcome to SCRUMify</h1>
+  <p>Another tryhard-trendy WebApp that Nobody will use. Anyway, click here if you want to have a look.</p>
+  <p><a class="btn btn-primary btn-lg" href="/register" role="button">Register</a></p>
+</div>
+{% endif %}
+
+{% endblock %}

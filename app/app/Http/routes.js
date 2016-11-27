@@ -17,10 +17,27 @@
 
 const Route = use('Route')
 
-Route.on('/').render('master')
+Route.on('/').render('main')
 
 Route.get('/login', 'UserController.renderLogin')
 Route.post('/login', 'UserController.login')
 
-Route.get('/register', 'UserController.renderRegister')
+Route.get('/register', 'UserController.renderRegistration')
 Route.post('/register', 'UserController.register')
+
+Route.get('logout', 'UserController.logout')
+
+Route.get('/tasks/view', 'TaskController.viewTasks')
+Route.post('/tasks/take', 'TaskController.takeTask')
+
+Route.get('/tasks/userTasks', 'UserController.userTasks');
+Route.post('/tasks/userTasks/abandon', 'UserController.abandonTask')
+Route.post('/tasks/userTasks/complete', 'TaskController.completeTask')
+
+Route.get('/editUser', 'UserController.renderEditPage')
+Route.post('/editUser', 'UserController.editUser')
+
+Route.get('/tasks/add', 'TaskController.renderAddTask')
+Route.post('/tasks/add', 'TaskController.addTask')
+
+Route.post('tasks/delete', 'TaskController.deleteTask')

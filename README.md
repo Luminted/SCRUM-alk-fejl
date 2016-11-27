@@ -17,20 +17,15 @@ Egy SCRUM-szerű projektmenedzser aplikáció feladatok szétosztására.
 * Feladatok megtekintése
 * Saját feladatok megtekintéseé és menedzselése
 * Feladatok vállalása
-* Szűrés feladatokra
-
 #### Adminként ####
 
 * Bejelentkezés
 * Profiladatok szerkesztése
 * Feladatok megtekintése
 * Saját feladatok megtekintése és menedzselése
+* Feladatok szerkesztése
 * Feladatok vállalása
-* Feladatok kiosztása
-* Felhasználói adatok szerkesztése
-* Felhasználói csoportok meghatározása (privilégiumok)
-* Felhasználók csoportok kiosztása
-* Szűrés feladatokra
+* Feladatok kiírása
 
 ### Nem funkcionális követelmények ###
 
