@@ -36,14 +36,8 @@ Egy SCRUM-szerű projektmenedzser aplikáció feladatok szétosztására.
 
 ## Használati esetek 
 
-![alt text](https://github.com/Luminted/SCRUM-alk-fejl/blob/master/Dokumentacio/ScrumUseCase.png "Használati esetek")
+![alt text](.\SCRUM-alk-fejl\Dokumentacio "Használati esetek")
 
-
-## Oldaltervek 
-
-![alt text](https://github.com/Luminted/SCRUM-alk-fejl/blob/master/Dokumentacio/Index.jpg "Index")
-![alt text](https://github.com/Luminted/SCRUM-alk-fejl/blob/master/Dokumentacio/Feladatok.jpg "Feladatok")
-![alt text](https://github.com/Luminted/SCRUM-alk-fejl/blob/master/Dokumentacio/Admin.jpg "Admin felület")
 
 ## Fogalomtár 
 
