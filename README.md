@@ -84,13 +84,6 @@ Ezek rendre a 3333 és 4444 számú portokon lesznek elérhetőek.
 
 ### UserController
 
-const Validator = use('Validator')
-const User = use('App/Model/User')
-const Undertaking = use('App/Model/Undertaking')
-const Category = use('App/Model/Category')
-const Database = use('Database')
-const Hash = use('Hash')
-
 #### Függőségek
 
 * Validator
@@ -135,4 +128,4 @@ const Hash = use('Hash')
 
 ## Adatbázis szerkezet
 
-![alt text](https://github.com/Luminted/SCRUM-alk-fejl/blob/master/Dokumentacio/ScrumUseCase.png "Használati esetek")
+![alt text](https://github.com/Luminted/SCRUM-alk-fejl/blob/master/Dokumentacio/databaseDiagram.png "Használati esetek")
