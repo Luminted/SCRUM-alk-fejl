@@ -55,7 +55,7 @@ Ezek rendre a 3333 és 4444 számú portokon lesznek elérhetőek.
 
 ### Végpontok
 
-* on / :Főoldal
+* on /: Főoldal
 
 * get /login: Bejelentkezési felület
 * post /login: Bejelentkezés feldolgozása
