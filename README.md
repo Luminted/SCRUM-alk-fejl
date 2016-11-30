@@ -47,7 +47,7 @@ Sprint - Időintervallum feladatok határidejének meghatározására
 
 ### Telepítés
 
-Navigálunk parancssorral a következő mappába ...\SCRUM-alk-fejl\app. A függőségek telepítéséhez adjuk ki a 'npm install' parancsot. Ez után adjuk ki a következő parancsokat a web és adatbázis szerver elindításához:
+Az állományok letöltése után navigálunk parancssorral a következő mappába ...\SCRUM-alk-fejl\app. A függőségek telepítéséhez adjuk ki a 'npm install' parancsot. Ez után adjuk ki a következő parancsokat a web és adatbázis szerver elindításához:
 * npm start
 * node_modules\.bin\admin config\express-admin
 
@@ -125,6 +125,8 @@ Ezek rendre a 3333 és 4444 számú portokon lesznek elérhetőek.
 * renderAddTask <- get /tasks/add
 * addTask <- post /tasks/add
 * deleteTask <- post /tasks/delete
+
+## TODO: user story
 
 ## Adatbázis szerkezet
 
