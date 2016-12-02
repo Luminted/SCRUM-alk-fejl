@@ -53,6 +53,47 @@ Az állományok letöltése után navigálunk parancssorral a következő mappá
 
 Ezek rendre a 3333 és 4444 számú portokon lesznek elérhetőek.
 
+#### Rendszerkövetelmények
+Az alkalmazás platformfüggetlen, szerver oldalon fut. Google Chrome böngészőben tesztelt. Várhatóan minden más nagy böngésző támogatja az itt felhasznált technológiát. Modern, Windows-os rendszeren tesztelt.
+A felhasználói felület JavaScriptet használ a felhasználói élmény növelése érdekében. Ha valamilyen okból JavaScript futtatása nem lehetséges, az alkalmazás továbbra is funkcionális marad.
+
+### User Story
+
+Fiókkal nem rendelkező felhasználóként lehetőség van a regisztrációra.
+Regisztráció után a felhasználó bejelntkezhet a megfelelő e-mail cím és jelszó párossal.
+A hitelesített felhasználó a 'View Tasks' menüpont alatt megtekintheti a kitűzött feladatokat és vállalhatja azokat.
+A hitelesített felhasználó a 'Your Tasks' menüpont alatt megtekintheti az általa vállalt feladatokat, teljesítettnek nyilváníthatja azokat vagy leadhatja azokat.
+A hitelesített felhasználó a 'Log out' menüponttal kijelentkezhet.
+A hitelesített felhasználó a 'SCRUMify' szóra kattintva visszatérhet a főoldalra.
+A hitelesített admin felhasználó ezeken felül az 'Add Tasks' menüpont alatt új feladatokat hozhat létre, a 'View Tasks' menüpont alatt feladatokat törölhet.
+
+### Oldaltérkép
+
+**Publikus:**
+* Főoldal
+* Bejelentkezés
+* Regisztráció
+
+**Bejelentkezett:**
+* Főoldal
+* Kijelentkezés
+* Feladatok megtekintése
+  * Feladat vállalása
+* Vállalt feladatok megtekintése
+  * Feladat teljesításe
+  * Feladat leadása
+
+**Admin:**
+* Főoldal
+* Kijelentkezés
+* Feladatok megtekintése
+  * Feladat vállalása
+  * Feladat törlése
+* Vállalt feladatok megtekintése
+  * Feladat teljesításe
+  * Feladat leadása
+* Feladat létrehozása
+
 ### Végpontok
 
 * on /: Főoldal
@@ -80,6 +121,18 @@ Ezek rendre a 3333 és 4444 számú portokon lesznek elérhetőek.
 
 * post tasks/delete: Feladat törlésének feldolgozása
 
+## Mappaszerkezet
+
+**app/**
+* app
+  * Https - a szervet oldali logika fájljait tartalmazza(végpontok, kontrollerek, middleware-ek)
+    * Controllers - az alkalmazás kontrollerei
+  * Model - adatbázis modellek
+  * ...
+* database - adatbázis és a hozzá tartozó állományok
+* node_modules - az alkalmazás dependeniái
+* resouces
+  * views - template HTML fájlok
 ## Kontrollerek
 
 ### UserController
@@ -125,8 +178,6 @@ Ezek rendre a 3333 és 4444 számú portokon lesznek elérhetőek.
 * renderAddTask <- get /tasks/add
 * addTask <- post /tasks/add
 * deleteTask <- post /tasks/delete
-
-## TODO: user story
 
 ## Adatbázis szerkezet
 
