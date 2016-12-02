@@ -53,6 +53,10 @@ Az állományok letöltése után navigálunk parancssorral a következő mappá
 
 Ezek rendre a 3333 és 4444 számú portokon lesznek elérhetőek.
 
+Az express szevrer elérhetősége:
+Felhasználó: root
+Jelszó: ROOTroot123
+
 #### Rendszerkövetelmények
 Az alkalmazás platformfüggetlen, szerver oldalon fut. Google Chrome böngészőben tesztelt. Várhatóan minden más nagy böngésző támogatja az itt felhasznált technológiát. Modern, Windows-os rendszeren tesztelt.
 A felhasználói felület JavaScriptet használ a felhasználói élmény növelése érdekében. Ha valamilyen okból JavaScript futtatása nem lehetséges, az alkalmazás továbbra is funkcionális marad.
@@ -60,12 +64,22 @@ A felhasználói felület JavaScriptet használ a felhasználói élmény növel
 ### User Story
 
 Fiókkal nem rendelkező felhasználóként lehetőség van a regisztrációra.
+
 Regisztráció után a felhasználó bejelntkezhet a megfelelő e-mail cím és jelszó párossal.
+
 A hitelesített felhasználó a 'View Tasks' menüpont alatt megtekintheti a kitűzött feladatokat és vállalhatja azokat.
+
 A hitelesített felhasználó a 'Your Tasks' menüpont alatt megtekintheti az általa vállalt feladatokat, teljesítettnek nyilváníthatja azokat vagy leadhatja azokat.
+
 A hitelesített felhasználó a 'Log out' menüponttal kijelentkezhet.
+
 A hitelesített felhasználó a 'SCRUMify' szóra kattintva visszatérhet a főoldalra.
+
 A hitelesített admin felhasználó ezeken felül az 'Add Tasks' menüpont alatt új feladatokat hozhat létre, a 'View Tasks' menüpont alatt feladatokat törölhet.
+
+Az admin felhasználó jelenleg nem procedurálisan generált. Egy ilyen (ScrumMaster69) felhasználó létezik jelenleg az alkalmazásban
+E-mail: root@scrum.com
+Jelszó: root
 
 ### Oldaltérkép
 
@@ -133,6 +147,8 @@ A hitelesített admin felhasználó ezeken felül az 'Add Tasks' menüpont alatt
 * node_modules - az alkalmazás dependeniái
 * resouces
   * views - template HTML fájlok
+* ...
+
 ## Kontrollerek
 
 ### UserController
@@ -182,3 +198,8 @@ A hitelesített admin felhasználó ezeken felül az 'Add Tasks' menüpont alatt
 ## Adatbázis szerkezet
 
 ![alt text](https://github.com/Luminted/SCRUM-alk-fejl/blob/master/Dokumentacio/databaseDiagram.png "Használati esetek")
+
+## Evolúció
+
+* Kliens oldali élmény csiszolása
+* Admin felhasználók procedúrális kezelése, hitelesítése
