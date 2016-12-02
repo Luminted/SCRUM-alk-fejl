@@ -78,7 +78,9 @@ A hitelesített felhasználó a 'SCRUMify' szóra kattintva visszatérhet a főo
 A hitelesített admin felhasználó ezeken felül az 'Add Tasks' menüpont alatt új feladatokat hozhat létre, a 'View Tasks' menüpont alatt feladatokat törölhet.
 
 Az admin felhasználó jelenleg nem procedurálisan generált. Egy ilyen (ScrumMaster69) felhasználó létezik jelenleg az alkalmazásban
+
 E-mail: root@scrum.com
+
 Jelszó: root
 
 ### Oldaltérkép
