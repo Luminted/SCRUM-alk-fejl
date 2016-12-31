@@ -1,12 +1,10 @@
-{% extends 'master' %}
-
-{% block content %}
+{% extends 'master' %} {% block content %}
 
 <h1>Login</h1>
 
 {% if old('error') %}
 <div class="alert alert-danger" role="alert">
-{{ old('error') }}
+  {{ old('error') }}
 </div>
 {% endif %}
 
@@ -30,5 +28,7 @@
     </div>
   </div>
 </form>
-
+{% endblock %}
+{% block scripts %}
+<script src="/scripts/loginAjax.js"></script>
 {% endblock %}

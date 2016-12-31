@@ -41,3 +41,11 @@ Route.get('/tasks/add', 'TaskController.renderAddTask')
 Route.post('/tasks/add', 'TaskController.addTask')
 
 Route.post('tasks/delete', 'TaskController.deleteTask')
+
+Route.group('ajax', function () {
+    Route.post('/login', 'UserController.ajaxLogin')
+    Route.delete('/tasks/delete', 'TaskController.ajaxDeleteTask').middleware('auth')
+    Route.post('/tasks/take', 'TaskController.ajaxTakeTask').middleware('auth')
+    Route.post('/tasks/userTasks/abandon', 'UserController.ajaxAbandonTask').middleware('auth')
+    Route.post('/tasks/userTasks/complete', 'TaskController.ajaxCompleteTask').middleware('auth')
+}).prefix('/ajax')

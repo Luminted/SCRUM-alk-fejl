@@ -11,6 +11,13 @@
 </div>
 {% endif %}
 
+<div class="page-header">
+  <h2>
+      {{currentUser.username}}
+      <span id="profilePicture"><small>{{currentUser.email}}</small></span>
+  </h2>
+</div>
+
 <form class="form-horizontal" action="/editUser" method="POST">
     {{ csrfField }}
     <div class="form-group">
@@ -38,4 +45,8 @@
     </div>
 </form>
 
+{% endblock %}
+
+{% block scripts %}
+<script src="scripts/userGravatarBundle.js"></script>
 {% endblock %}

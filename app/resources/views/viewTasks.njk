@@ -10,14 +10,14 @@
                 </div>
                 <div class="panel-body">
                     <p>{{task.description}}</p>
-                    <p><i> {{task.category}}</i></p>
+                    <p id="category"><i> {{task.category}}</i></p>
                 </div>
                 <div class="panel-footer">
                     <div class="form-group">
                         <button disabled>Taken</button>
                     </div> {% if currentUser.username == 'ScrumMaster69' %}
                     <div class="form-group">
-                        <form action="/tasks/delete" method="POST">
+                        <form class="deleteForm" action="/tasks/delete" method="POST">
                             {{ csrfField }}
                             <input type="hidden" name="task_id" value={{task.id}}>
                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -37,11 +37,11 @@
                 </div>
                 <div class="panel-body">
                     <p>{{task.description}}</p>
-                    <p><i> {{task.category}}</i></p>
+                    <p id="category"><i> {{task.category}}</i></p>
                 </div>
                 <div class="panel-footer">
                     <div class="form-group">
-                        <form action="/tasks/take" method="POST">
+                        <form class="takeForm"  action="/tasks/take" method="POST">
                             {{ csrfField }}
                             <input type="hidden" name="task_id" value={{task.id}}>
                             <button type="submit" class="btn btn-success">Take</button>
@@ -49,7 +49,7 @@
                     </div>
                     {% if currentUser.username == 'ScrumMaster69' %}
                     <div class="form-group">
-                        <form action="/tasks/delete" method="POST">
+                        <form class="deleteForm" action="/tasks/delete" method="POST">
                             {{ csrfField }}
                             <input type="hidden" name="task_id" value={{task.id}}>
                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -63,4 +63,35 @@
         {% endfor %}
     </div>
 </div>
+<div class="modal fade confirm-modal" tabindex="-1" role="dialog" id="deleteConfirmModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            Are you sure, mate?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">No</button>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade confirm-modal" tabindex="-1" role="dialog" id="takeConfirmModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            Are you sure, mate?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">No</button>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/scripts/colorCodeTasks.js"></script>
+<script src="/scripts/deleteTaskAjax.js"></script>
+<script src="/scripts/takeTaskAjax.js"></script>
 {% endblock %}

@@ -31,9 +31,11 @@
     "adonis-middleware": "^1.0.8",
     "adonis-validation-provider": "^3.0.4",
     "express-admin": "^1.2.8",
+    "md5": "^2.2.1",
     "sqlite3": "^3.1.8",
     "standard": "^8.4.0",
-    "youch": "^1.0.1"
+    "youch": "^1.0.1",
+    "jquery": "^3.1.1"
   },
   "standard": {
     "global": [

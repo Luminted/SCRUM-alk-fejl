@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,55 +11,85 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  </head>
-  <body>
+</head>
+
+<body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">SCRUMify</a>
+                <a class="navbar-brand" href="/">SCRUMify</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                {% if currentUser %}
-                <li><a href="/tasks/view">View Tasks</a></li>
-                <li><a href="/tasks/userTasks">Your Tasks</a></li>
-                {% if currentUser.username == 'ScrumMaster69' %}
-                <li><a href="/tasks/add">Add Tasks</a></li>
-                {% endif %}                
-                {% endif %}
-                
-            </ul>
+                <ul class="nav navbar-nav">
+                    {% if currentUser %}
+                    <li><a href="/tasks/view">View Tasks</a></li>
+                    <li><a href="/tasks/userTasks">Your Tasks</a></li>
+                    {% if currentUser.username == 'ScrumMaster69' %}
+                    <li><a href="/tasks/add">Add Tasks</a></li>
+                    {% endif %} {% endif %}
 
-            <ul class="nav navbar-nav navbar-right">
-                {% if currentUser %}
-                <li><a href="/editUser">{{ currentUser.username }}</a></li>
-                <li><a href="/logout">Log out</a></li>
-                {% else %}
-                <li><a href="/login">Log in</a></li>
-                <li><a href="/register">Registration</a></li>
-                {% endif %}
-            </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    {% if currentUser %}
+                    <li><a href="/editUser">{{ currentUser.username }}</a></li>
+                    <li>
+                        <p hidden id="gravatar" class="navbar-text">{{ currentUser.email }}</p>
+                    </li>
+                    <li><a href="/logout">Log out</a></li>
+                    {% else %}
+                    <li><a id="loginLink" href="/login">Log in</a></li>
+                    <li><a href="/register">Registration</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
     </nav>
 
     <div class="container">
         {% block content %}{% endblock %}
+    </div>
+    <div class="modal fade confirm-modal" tabindex="-1" role="dialog" id="loginConfirmModal">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="input-group">
+                        <div class="alert alert-danger"></div>
+                        {{ csrfField }}
+                        <input type="email" class="form-control" placeholder="E-mail" id="modalUsername" aria-describedby="basic-addon1">
+                        <input type="password" class="form-control" placeholder="Password" id="modalPassword" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">Go</button>
+                    <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% if currentUser %}
+    <script src="/scripts/navbarGravatarBundle.js"></script>
+    {% else %}
+    <script src="/scripts/loginAjax.js"></script>
+    {% endif %} 
     {% block scripts %}{% endblock %}
-  </body>
+</body>
+
 </html>

@@ -13,7 +13,7 @@
 </div>
 {% endif %}
 
-<form class="form-horizontal" action="/tasks/add" method="POST">
+<form class="form-horizontal" action="/tasks/add" method="POST" id="form">
   {{ csrfField }}
   <div class="form-group">
     <label for="inputTitle" class="col-sm-2 control-label">Title</label>
@@ -44,4 +44,7 @@
   </div>
 </form>
 
+{% endblock %}
+
+{% block scripts %}
 {% endblock %}

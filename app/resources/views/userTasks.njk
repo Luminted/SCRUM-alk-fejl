@@ -10,17 +10,17 @@
                 </div>
                 <div class="panel-body">
                     <p>{{task.description}}</p>
-                    <p><i> {{task.category}}</i></p>
+                    <p id="category"><i> {{task.category}}</i></p>
                 </div>
                 <div class="panel-footer">
-                    <form action="/tasks/userTasks/abandon" method="POST">
+                    <form class="abandonForm" action="/tasks/userTasks/abandon" method="POST">
                         {{ csrfField }}
                         <div class="form-group">
                             <input type="hidden" name="task_id" value={{task.id}}>
                             <button type="submit" class="btn btn-danger">Abandon</button>
                         </div>
                     </form>
-                    <form action="/tasks/userTasks/complete" method="POST">
+                    <form class="completeForm" action="/tasks/userTasks/complete" method="POST">
                         {{ csrfField }}
                         <div class="form-group">
                             <input type="hidden" name="task_id" value={{task.id}}>
@@ -34,4 +34,36 @@
         {% endfor %}
     </div>
 </div>
+<div class="modal fade confirm-modal" tabindex="-1" role="dialog" id="abandonConfirmModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            Are you sure, mate?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">No</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade confirm-modal" tabindex="-1" role="dialog" id="completeConfirmModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            Are you sure, mate?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">No</button>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/scripts/colorCodeTasks.js"></script>
+<script src="/scripts/abandonTaskAjax.js"></script>
+<script src="/scripts/completeTaskAjax.js"></script>
 {% endblock %}

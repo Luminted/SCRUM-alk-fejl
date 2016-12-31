@@ -1,7 +1,6 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'run',
 1 verbose cli   'start' ]
 2 info using npm@3.10.9
 3 info using node@v6.9.2
@@ -28,7 +27,7 @@
 15 verbose pkgid scrum@1.0.0
 16 verbose cwd C:\Users\Levente\Desktop\SCRUM-alk-fejl
 17 error Windows_NT 10.0.14393
-18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "start"
+18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
 19 error node v6.9.2
 20 error npm  v3.10.9
 21 error code ELIFECYCLE

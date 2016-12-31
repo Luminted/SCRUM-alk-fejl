@@ -51,15 +51,27 @@ class TaskController {
 
         yield task.delete()
         yield res.redirect('/tasks/userTasks')
+        
     }
 
-    *renderAddTask(req,res){
+    *ajaxCompleteTask(req, res) {
+        const taskId = req.input('task_id')
+
+        const task = yield Task.query().where('id', taskId).first()
+
+        yield task.delete()
+        res.ok({
+            success: true
+        })
+    }
+
+    *renderAddTask(req, res) {
         const categories = yield Category.all()
 
-        yield res.sendView('addTask', {categories: categories.toJSON()})
+        yield res.sendView('addTask', { categories: categories.toJSON() })
     }
 
-    *addTask(req,res){
+    *addTask(req, res) {
         const inputData = req.all()
 
         const rules = {
@@ -82,19 +94,47 @@ class TaskController {
         task.title = inputData.title;
         task.description = inputData.description;
         task.category_id = inputData.category
-        
+
         yield task.save()
 
         res.redirect('/tasks/view')
     }
 
-    *deleteTask(req,res){
+    *deleteTask(req, res) {
         const taskId = req.input('task_id')
 
         const task = yield Task.query().where('id', taskId).first()
 
         yield task.delete()
         yield res.redirect('/tasks/view')
+    }
+
+    *ajaxDeleteTask(req, res) {
+        const taskId = req.input('task_id')
+        console.log('\n\n\nreq' + req);
+
+        const task = yield Task.query().where('id', taskId).first()
+
+        yield task.delete()
+
+        res.ok({
+            success: true
+        })
+    }
+
+    *ajaxTakeTask(req, res){
+        const userId = yield req.session.get('adonis-auth');
+        const taskId = req.input('task_id');
+
+        const undertaking = new Undertaking
+        undertaking.user_id = userId
+        undertaking.task_id = taskId;
+
+        yield undertaking.save();
+
+        res.ok({
+            success: true
+        })
     }
 }
 

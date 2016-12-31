@@ -124,6 +124,19 @@ class UserController {
         yield res.redirect('/tasks/userTasks')
     }
 
+    *ajaxAbandonTask(req,res){
+        const userId = yield req.session.get('adonis-auth')
+        const taskId = req.input('task_id')
+
+        const undertaking = yield Undertaking.query().where('task_id',  taskId).where('user_id', userId).first()
+
+        yield undertaking.delete()
+        
+        res.ok({
+            success: true
+        })
+    }
+
     *renderEditPage(req,res){
         yield res.sendView('editUser');
     }
@@ -157,6 +170,18 @@ class UserController {
         yield req.auth.login(user)
         yield res.redirect('/editUser');
 
+    }
+
+    * ajaxLogin (req, res) {
+        const email = req.input('email')
+        const password = req.input('password')
+
+        try {
+            yield req.auth.attempt(email, password)
+            res.ok({ success: true })
+        } catch (ex) {
+            res.ok({ success: false })
+        }
     }
 
 }
