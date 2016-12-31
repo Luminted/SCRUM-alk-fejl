@@ -227,7 +227,7 @@ A frontend megjeleníti a felhasználó e-mail címéhez tartozó Gravatar-t a f
 
 ### Ajaxosított törlés folyamatábája
 
-![alt text](SCRUM-alk-fejl/Dokumentacio/deleteTask.png)
+![alt text](https://raw.githubusercontent.com/Luminted/SCRUM-alk-fejl/master/Dokumentacio/deleteTask.png)
 
 ### Funkcionális Tesztelés
 
