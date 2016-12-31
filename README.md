@@ -205,3 +205,61 @@ Jelszó: root
 
 * Kliens oldali élmény csiszolása
 * Admin felhasználók procedúrális kezelése, hitelesítése
+
+## Progresszív fejlesztés
+
+### Frontend Fejlesztések
+
+A frontend használatának kényelmesebbé tételét az app/public/scripts mappában található szkriptek valósítják meg.
+
+#### Belépés ajaxosítása
+Ezt a loginAjax.js fájl valósítja meg. Letiltja az eredeti működést és egy párbeszédablakon keresztül lépteti be a felhasználót egy ajax kéréssel a szerver felé.
+
+#### Feladatok kezelésének ajaxosítása
+A feladatok felvétele, törlése, leadása és befejezése rendre ajax kérésekkel valósulnak meg. Ezekért a funkciókér rendre a takeTaskAjax.js, deleteTaskAjax.js, abandonTaskAjax.js és completeTaskAjax.js állományok felelnek.
+A művelet végrehajtása előtt egy párbeszédablakon a felhasználó megerősítheti vagy elutasíthatja szándékát, majd egy ajax kéréssel végrehajtódik az akció.
+
+#### Feladatok színezése kategória szerint
+A feladatok színezésre kerülnek a kategóriájuk szerint. Ezt a colorCodeTasks.js fájl valósítja meg.
+
+#### Gravatar integráció
+A frontend megjeleníti a felhasználó e-mail címéhez tartozó Gravatar-t a fejlécen és a profilján. Ezt a navbarGravatarBundle.js és userGravatarBundle.js fájlok valósítják meg. Ezek a fálok kötegelve lettek, mivel importált modulokat használnak.
+
+### Ajaxosított törlés folyamatábája
+
+kép
+
+### Funkcionális Tesztelés
+
+A funkcionális teszteket Mozzila Firefox böngészőben végezzük, Selenium IDE segítségével.
+
+#### Tesztelő Telepítés
+
+* Telepítsük a Firefox legújabb verzióját.
+* Telepítsük a Selenium Firefox plugint: https://addons.mozilla.org/hu/firefox/addon/selenium-ide/
+
+#### Tesztelés
+
+A tesztfájlok a /test mappában találhatóak. A fájlok és funkcionalitásuk:
+
+* abandonTaskTest.html -> feladat leadásának tesztje
+* add TaskTest.html -> feladat felvételének tesztje
+* completeTaskTest.html -> feladat teljesítésének tesztje
+* deleteTaskTest.html -> feladat törlésének tesztje
+* loginTest.html -> bejelentkezés tesztje
+* takeTaskTest -> feladat vállalásának tesztje
+* functionalTests -> a fenti fájlok kötegelése  
+
+Nyissuk meg Firefoxban a webapplikácót és mellette a Selenium IDE-t. Töltsük be a functionalTests fájl az IDE-be. Ez tesztesetek egy szekvenciáját tartalmazza.
+A teszt megkezdése előtt jelentkezzünk ki az applikációból.
+
+A teszt a következőt hajtja végre:
+
+* Bejelentkezik Adminként
+* Hozzáad 4 különböző kategóriájú feladatot
+* Felvesz magának 3 feladatot
+* Kitöröl egy feladatot
+* Lead egy feladatot
+* Befejezetté tesz egy feladatot
+
+A tesztelési folyamat az elindítás után automatikusan hajtódik végre. A teszteket közepes sebességgel ajánlott futtatni.
